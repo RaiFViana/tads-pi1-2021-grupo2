@@ -38,7 +38,7 @@ public class Jogo {
                 menu=menu+2;
                 break;
             case 3:
-                System.out.println("Criado por: Raí Fernando Santos Viana; \n José Natan Claudino Dantas; \n Bruno Viana Rufino; \n Gian Felipe Pechuti.\n Senac 2021, Projeto Integrador, Grupo 2. ");
+                System.out.println("Criado por: Raí Fernando Santos Viana; \n José Natan Claudino Dantas; \n Bruno Viana Rufino; \n Gian Felipe Pechuti; \n Gustavo Falcione Cagnato.\n Senac 2021, Projeto Integrador, Grupo 2. ");
                 break;
             case 4:
                 System.out.println("Saindo...");
