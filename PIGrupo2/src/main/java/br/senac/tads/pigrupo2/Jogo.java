@@ -164,6 +164,8 @@ public class Jogo {
         menu();
         System.out.println("Teste ok");
         
+        
+        
         vdjogador = 20;
         dmjogador = 5;
         itens.add("Tocha"); //assim é como os itens são adicionados ao jogador
