@@ -53,7 +53,7 @@ public class Jogo {
     //*****************************************************************************************************************************************
     //*****************************************************************************************************************************************
     //Salas
-    public static int salas(int sala) {
+    public static void salas() {
         boolean salas = false;
         Scanner input = new Scanner(System.in);
         int escolha = 0;
@@ -64,14 +64,17 @@ public class Jogo {
                     + "Porta da esquerda = 1 | Porta da direita = 2");
             escolha = input.nextInt();
 
-            switch (escolha) {  // <--- Primeira Batalha --
+            itens.add("tocha");
+            switch (escolha) {  // <--- Primeira Sala --
                 case 1:
-                    danoItem(caracInimigo, caracInimigo);
-                    batalha(dmInimigo, caracInimigo);
+
+                    itens.add("Espada Nova");
+
                     break;
                 case 2:
-                    danoItem(caracInimigo, caracInimigo);
-                    batalha(dmInimigo, caracInimigo);
+
+                    itens.add("Espada Velha");
+
                     break;
             }
 
@@ -80,8 +83,23 @@ public class Jogo {
 
             switch (escolha) {
                 case 1:
-                    danoItem(caracInimigo, caracInimigo);
-                    batalha(dmInimigo, caracInimigo);
+                    dmjogador = 10;
+                    dmInimigo = 10;
+                    batalha(20, "Grama");
+                    if (vitoria) {
+
+                        itens.add("Bomba d'gua");
+                        itens.add("Poção");
+                        vdjogador = 25;
+
+                        vitoria = false;
+                    } else {
+
+                        vdjogador = 15;
+                        batalha(10, "Grama");
+
+                    }
+
                     break;
                 case 2:
                     System.out.println("Você escolheu sair");
@@ -94,8 +112,24 @@ public class Jogo {
             switch (escolha) {
 
                 case 1:
-                    danoItem(caracInimigo, caracInimigo);
-                    batalha(dmInimigo, caracInimigo);
+
+                    vdjogador = 25;
+                    dmjogador = 10;
+                    dmInimigo = 12;
+                    batalha(20, "Fogo");
+                    if (vitoria) {
+
+                        itens.add("Bomba ");
+                        itens.add("Poção");
+                        vdjogador = 30 + 5;
+
+                        vitoria = false;
+                    } else {
+
+                        vdjogador = 15;
+                        batalha(10, "Fogo");
+
+                    }
                     break;
 
                 case 2:
@@ -108,8 +142,24 @@ public class Jogo {
 
             switch (escolha) {
                 case 1:
-                    danoItem(caracInimigo, caracInimigo);
-                    batalha(dmInimigo, caracInimigo);
+
+                    vdjogador = 35;
+                    dmjogador = 10;
+                    dmInimigo = 7;
+                    batalha(80, "Grama");
+                    if (vitoria) {
+
+                        itens.add("Bomba Magica");
+                        itens.add("Poção");
+                        vdjogador = vdjogador - dmInimigo + 30;
+
+                        vitoria = false;
+                    } else {
+
+                        vdjogador = 15;
+                        batalha(10, "Grama");
+
+                    }
                     break;
                 case 2:
                     System.out.println("Você escolheu sair");
@@ -120,8 +170,22 @@ public class Jogo {
                     + "Sim = 1 | Não = 2");
             switch (escolha) {
                 case 1:
-                    danoItem(caracInimigo, caracInimigo);
-                    batalha(dmInimigo, caracInimigo);
+
+                    vdjogador = 35;
+                    dmjogador = 10;
+                    dmInimigo = 12;
+                    batalha(35, "Grama");
+                    if (vitoria) {
+
+                        vdjogador = 35;
+
+                        vitoria = false;
+                    } else {
+
+                        vdjogador = 25;
+                        batalha(10, "Grama");
+
+                    }
                     break;
                 case 2:
                     System.out.println("Você escolheu sair");
@@ -129,7 +193,6 @@ public class Jogo {
             }
         } while (!salas);
 
-        return sala;
     }
 
     //*****************************************************************************************************************************************
@@ -245,18 +308,7 @@ public class Jogo {
         menu();
         System.out.println("Teste ok");
 
-       // int sala = salas(sala);
-        vdjogador = 20;
-        dmjogador = 5;
-        itens.add("Tocha"); //assim é como os itens são adicionados ao jogador
-        itens.add("Bomba Magica");
-        itens.add("Poção");
+        salas();
 
-        dmInimigo = 10;//aqui onde será definido o dano do inimigo isso deve ser feito sempre antes de uma batalha
-        batalha(20, "Grama");//esse metodo é o que começa uma luta, basta passar como parametro a vida do inimigo e sua caracteristica, Fogo Água etc...
-        if (vitoria) {
-            //caso ele tenha ganho a batalha dar recompensas do jogador segundo fluxograma,  e colocar vitoria como falso
-            vitoria = false;
-        }
     }
 }
