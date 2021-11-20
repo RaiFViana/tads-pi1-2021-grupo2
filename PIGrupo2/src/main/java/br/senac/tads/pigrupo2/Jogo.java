@@ -123,6 +123,34 @@ public class Jogo {
             vitoria = false;
         } 
     }
+    
+    public static void SalaTerra() {
+        System.out.println("*-- Sala da Terra, deseja prosseguir?" 
+                    + " Sim = 1 | Não = 2"); 
+    
+        System.out.println("Você entrou na Sala da Terra, nela você enfrentará um "
+            + "Golém de Pedra"); 
+      
+           
+                    vdjogador = 25;
+                    dmInimigo = 12;
+                    batalha(20, "Terra"); 
+                    
+                    if (vitoria) {
+
+                        itens.add("Bomba");
+                        itens.add("Poção");
+                        vdjogador = 20 + 5;
+                        vitoria = false; 
+                        
+                        System.out.println("Você vence a batalha do Golem "
+                        + "e recolhe os itens:");
+                        System.out.println(" → Uma bomba");
+                        System.out.println(" → Uma poção de cura");
+                        System.out.println(" → Sua vida agora é 25");
+                        
+                    } 
+    }
 
 
     //*****************************************************************************************************************************************
