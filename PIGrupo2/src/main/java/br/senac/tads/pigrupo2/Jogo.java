@@ -85,6 +85,45 @@ public class Jogo {
         }
 
     }
+    
+
+    public static void SalaFogo(){
+        System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente \n"
+                + "desta vez você parece estar em um vulkão a lava nas paredes e a temperatura está nas alturas \n"
+                + "você se depara com quatro inimigos que parecem ser demonios");
+        dmInimigo = 7;
+        batalha(20, "Fogo");
+        if (vitoria) {
+            System.out.println("Recolhe os itens das criaturas\n" +
+                                "uma bomba de fogo e uma poção de cura de 10 pontos\n" +
+                                "vida total agora é 25, você também encontra uma espada um pouco melhor que a sua atual");
+            itens.add("Bomba");
+            itens.add("Poção");
+            vdjogador = 25;
+            dmjogador += 3;
+          
+            vitoria = false;
+        }     
+    }
+    
+    public static void SalaGrama(){
+        System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente, "
+                + "desta vez você parece estar em uma floresta as paredes são envoltas de arvores, "
+                + "e ao longe você ve o sol iluminando o local, você se depara com três inimigos com forma humanoide totalmente feitos de grama ");
+        dmInimigo = 9;
+        batalha(25, "Grama");
+        if (vitoria) {
+            System.out.println("Recolhe os itens das criaturas\n" +
+                                "uma Bomba Magica e uma poção de cura de 10 pontos\n" +
+                                "você também encontra uma bota de aventureiro, vida total agora é 30");
+            itens.add("Bomba");
+            itens.add("Poção");
+            vdjogador = 30;
+          
+            vitoria = false;
+        } 
+    }
+
 
     //*****************************************************************************************************************************************
     //*****************************************************************************************************************************************
