@@ -68,7 +68,7 @@ public class Jogo {
 
     public static void salaAgua() {
 
-        dmInimigo = 10;
+        dmInimigo = 5;
         batalha(20, "Agua");
         if (vitoria) {
 
@@ -128,9 +128,6 @@ public class Jogo {
     
         System.out.println("Você entrou na Sala da Terra, nela você enfrentará um "
             + "Golém de Pedra"); 
-      
-           
-                    vdjogador = 25;
                     dmInimigo = 12;
                     batalha(20, "Terra"); 
                     
@@ -138,7 +135,7 @@ public class Jogo {
 
                         itens.add("Bomba");
                         itens.add("Poção");
-                        vdjogador = 20 + 5;
+                        vdjogador = 35;
                         vitoria = false; 
                         
                         System.out.println("Você vence a batalha do Golem "
@@ -202,7 +199,7 @@ public class Jogo {
     static int dmInimigo;//o dano do inimigo deve ser global por conta dos itens de efeito
 
     //caracteristicas do jogador
-    static int vdjogador;
+    static int vdjogador = 20;
     static int dmjogador;
 
     //vitoria 
