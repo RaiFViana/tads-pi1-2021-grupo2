@@ -23,7 +23,7 @@ public class Jogo {
         int menu = 0;
         Scanner input = new Scanner(System.in);
         while (menu <= 1) {
-            System.out.println("1.Instruções\n2.Jogar\n3.Créditos\n4.Sair");
+            System.out.println("1.Instruções\n2.Jogar\n3.Créditos\n4.Sair\n5.Enredo");
 
             escolha = input.nextInt();
             switch (escolha) {
@@ -31,7 +31,8 @@ public class Jogo {
                     System.out.println("A opção escolhida foi Instruções.");
                     System.out.println("A opção (2)Jogar iniciara o jogo, todos os comandos deverão ser introduzidos por texto quando solicitados.\n"
                             + "A escolha (3)Creditos ira mostrar o nome dos criadores do projeto. \n"
-                            + "E a escolha (4)Sair for selecionada o programa vai se encerrar.\n");
+                            + "E a escolha (4)Sair for selecionada o programa vai se encerrar.\n"
+                            + " A escolha (5)Enredo é uma introdução sobre o enredo do jogo.\n");
                     break;
                 case 2:
                     System.out.println("A opção escolhida foi jogar");
@@ -44,6 +45,21 @@ public class Jogo {
                 case 4:
                     System.out.println("Saindo...");
                     System.exit(0);
+                    break;
+                case 5:
+                    System.out.println("O “herói” (jogador) é um explorador, um rapaz bem-informado, e descobre da lenda da \n"
+                            + "Ehrgeiz Dungeon, um lugar onde qualquer ambição daquele que entrar na dungeon e sair vivo \n"
+                            + "será realizada, nosso “herói” ao encontrar esse lugar não perde a oportunidade e adentra a \n"
+                            + "dungeon, no mesmo instante, ele perde sua consciência e acorda com somente uma tocha e \n"
+                            + "uma mochila velha ao seu lado, tudo que lhe resta é seguir em frente.\n"
+                            + "O que é Ehrgeiz Dungeon? é um local onde são reunidas pessoas de todas as dimensões, \n"
+                            + "linhas-temporais, para um único propósito, lutar, para o prazer de quem isso nunca \n"
+                            + "saberemos, talvez Deus?\n"
+                            + "Salas em que o “herói” entra: todas elas representam um elemento, que correspondem, a \n"
+                            + "terra natal do inimigo correspondente, na primeira sala é possível encontrar os homens peixe,\n"
+                            + "você é o desafio para eles da mesma maneira que eles para você, é a forma como a dungeon \n"
+                            + "funciona, colocando o jogador sempre no último destino de outros que buscam sua ambição\n");
+                     break;
                 default:
                     System.out.println("Escolha invalida");
             }
@@ -60,7 +76,8 @@ public class Jogo {
         String caracInimigo = "null";
 
         do {
-            System.out.println("Você se vê diante de Duas portas, qual irá escolher?"
+
+            System.out.println("Você se vê diante de Duas portas, qual irá escolher ?\n "
                     + "Porta da esquerda = 1 | Porta da direita = 2");
             escolha = input.nextInt();
 
@@ -306,7 +323,8 @@ public class Jogo {
 
     public static void main(String[] args) {
         menu();
-        System.out.println("Teste ok");
+        System.out.println("Você acorda em frente a duas portas com uma tocha e uma bolsa vazia ");
+        System.out.println("O heroi recolhe os poucos itens que ele encontra proximos a ele,\n Tudo que ele encontra é uma tocha e uma bolsa vazia.");
 
         salas();
 
