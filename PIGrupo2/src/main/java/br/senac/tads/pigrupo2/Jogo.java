@@ -151,6 +151,29 @@ public class Jogo {
                         
                     } 
     }
+    
+    public static void salaAr() {
+
+
+        dmInimigo = 16;
+        batalha(20, "Ar");
+
+        if (vitoria) {
+
+            itens.add("Bomba");
+            itens.add("Poção");
+
+            vdjogador = 35;
+
+            vitoria = false;
+
+            System.out.println("Você ganhou a batalha e recolheu os itens"
+                    + "Uma Bomba"
+                    + "Uma poção de cura"
+                    + "Sua vida total agora é de 35");
+        }
+
+    }
 
 
     //*****************************************************************************************************************************************
