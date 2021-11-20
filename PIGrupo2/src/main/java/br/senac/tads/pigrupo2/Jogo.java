@@ -59,17 +59,37 @@ public class Jogo {
                             + "terra natal do inimigo correspondente, na primeira sala é possível encontrar os homens peixe,\n"
                             + "você é o desafio para eles da mesma maneira que eles para você, é a forma como a dungeon \n"
                             + "funciona, colocando o jogador sempre no último destino de outros que buscam sua ambição\n");
-                     break;
+                    break;
                 default:
                     System.out.println("Escolha invalida");
             }
         }
     }
 
+    public static void salaAgua() {
+
+        dmInimigo = 10;
+        batalha(20, "Agua");
+        if (vitoria) {
+
+            itens.add("Bomba d'gua");
+            itens.add("Poção");
+            vdjogador = 25;
+
+            vitoria = false;
+
+            System.out.println("Você vence a batalha e recolhe os itens dos homens peixes,"
+                    + " uma bomba d'água"
+                    + "e uma poção de cura de 10 pontos"
+                    + "Sua vida total agora é de 25 pontos!");
+        }
+
+    }
+
     //*****************************************************************************************************************************************
     //*****************************************************************************************************************************************
     //Salas
-   /* public static void salas() {
+    /* public static void salas() {
         boolean salas = false;
         Scanner input = new Scanner(System.in);
         int escolha = 0;
@@ -194,7 +214,7 @@ public class Jogo {
         } while (!salas);
 
     }
-*/
+     */
     //*****************************************************************************************************************************************
     //*****************************************************************************************************************************************
     //Metodos do combate
@@ -307,37 +327,38 @@ public class Jogo {
     public static void main(String[] args) {
         menu();
         Scanner input = new Scanner(System.in);
-                System.out.println("Você acorda em frente a duas portas, com uma tocha apagada em sua mão esquerda e uma mochila vazia nos pés."
+        System.out.println("Você acorda em frente a duas portas, com uma tocha apagada em sua mão esquerda e uma mochila vazia nos pés."
                 + "Qual porta você deseja entrar?"
                 + "\n Porta da esquerda = 1 | Porta da direita = 2");
-        
+
         int escolhaEspada = input.nextInt();
-        switch(escolhaEspada){
+        switch (escolhaEspada) {
             case 1:
                 System.out.println("Você entrou na porta da esquerda e encontrou uma espada de aço, afiada e com a empunhadura em couro perfeita para combate.");
                 dmjogador = 10;
                 break;
             case 2:
-                System.out.println("Você entrou na porta da direita e encontrou uma espada de madeira" );
+                System.out.println("Você entrou na porta da direita e encontrou uma espada de madeira");
                 dmjogador = 5;
                 break;
-        }     System.out.println("Ao se levantar e recolher os poucos itens que encontrou,\nOlhando entre a brecha da porta você sente uma forte brisa. "
+        }
+        System.out.println("Ao se levantar e recolher os poucos itens que encontrou,\nOlhando entre a brecha da porta você sente uma forte brisa. "
                 + "Abrindo a porta e passando por ela, Você entra em uma praia.");
-       // Sala agua  salas() -> Fogo -> Grama -> Terra -> Ar;
+        // Sala agua  salas() -> Fogo -> Grama -> Terra -> Ar;
         System.out.println("Ao finalizar o combate, o céu começa a escurecer formando um redemoinho de nuvens, a mar começa a ficar vermelho e a ilha começa a expulgar lava."
                 + "\n Você vira ao redor e encontra um portal, ao passar por ele você se encontra em um lugar totalmente distorcido, Seria esse o inferno? ");
         System.out.println("Bem vindo a Sala de Fogo: ");
         //sala fogo()
         System.out.println("Finalizandoa  batalha, saindo virotioso é possivel ver a abertura de um novo portal em sua frente, passando por ele voce fica dormente..."
                 + "\n É possivel ouvir o barulho de passaros e e folhas, apos levantar você percebe que esta em uma floresta");
-                //>Grama
-                System.out.println("Apos derrotar os inimigos, olhando ao seus arredores é possivel perceber que o terreno começou a mudar as arvores começaram a virar pedra "
-                        + "\n e a vegetação começa a secar, todo o cénario muda em um piscar de olhos ");
-                // sala Terra
-                
-                System.out.println("Derrotando todos os inimigos você é sugado por um tornado, Acordando em cima das nuvens.");
-                //Sala Ar
-                
+        //>Grama
+        System.out.println("Apos derrotar os inimigos, olhando ao seus arredores é possivel perceber que o terreno começou a mudar as arvores começaram a virar pedra "
+                + "\n e a vegetação começa a secar, todo o cénario muda em um piscar de olhos ");
+        // sala Terra
+
+        System.out.println("Derrotando todos os inimigos você é sugado por um tornado, Acordando em cima das nuvens.");
+        //Sala Ar
+
         //sala 
     }
 }
