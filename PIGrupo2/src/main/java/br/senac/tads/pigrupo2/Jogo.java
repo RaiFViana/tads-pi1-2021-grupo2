@@ -87,7 +87,7 @@ public class Jogo {
     }
     
 
-    public static void SalaFogo(){
+    public static void salaFogo(){
         System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente \n"
                 + "desta vez você parece estar em um vulkão a lava nas paredes e a temperatura está nas alturas \n"
                 + "você se depara com quatro inimigos que parecem ser demonios");
@@ -106,7 +106,7 @@ public class Jogo {
         }     
     }
     
-    public static void SalaGrama(){
+    public static void salaGrama(){
         System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente, "
                 + "desta vez você parece estar em uma floresta as paredes são envoltas de arvores, "
                 + "e ao longe você ve o sol iluminando o local, você se depara com três inimigos com forma humanoide totalmente feitos de grama ");
@@ -124,9 +124,7 @@ public class Jogo {
         } 
     }
     
-    public static void SalaTerra() {
-        System.out.println("*-- Sala da Terra, deseja prosseguir?" 
-                    + " Sim = 1 | Não = 2"); 
+    public static void salaTerra() {
     
         System.out.println("Você entrou na Sala da Terra, nela você enfrentará um "
             + "Golém de Pedra"); 
@@ -174,140 +172,32 @@ public class Jogo {
         }
 
     }
+    
+     public static void salaFinal() {
 
 
-    //*****************************************************************************************************************************************
-    //*****************************************************************************************************************************************
-    //Salas
-    /* public static void salas() {
-        boolean salas = false;
-        Scanner input = new Scanner(System.in);
-        int escolha = 0;
-        String caracInimigo = "null";
+        dmInimigo = 18;
+        batalha(20, "Ar");
 
-        do {
+        if (vitoria) {
 
-            
-            System.out.println("*-- Sala Da Praia, deseja prosseguir?" // <-- Alterar para o texto do "diálogo" --
-                    + "Sim = 1 | Não = 2 --*");
+            itens.add("Bomba");
+            itens.add("Poção");
 
-            switch (escolha) {
-                case 1:
-                    dmjogador = 10;
-                    dmInimigo = 10;
-                    batalha(20, "Grama");
-                    if (vitoria) {
+            vdjogador = 40;
 
-                        itens.add("Bomba d'gua");
-                        itens.add("Poção");
-                        vdjogador = 25;
+            vitoria = false;
 
-                        vitoria = false;
-                    } else {
-
-                        vdjogador = 15;
-                        batalha(10, "Grama");
-
-                    }
-
-                    break;
-                case 2:
-                    System.out.println("Você escolheu sair");
-                    break;
-
-            }
-
-            System.out.println("*-- Sala do vulcão, deseja prosseguir?" // <-- Alterar para o texto do "diálogo" --
-                    + "Sim = 1 | Não = 2");
-            switch (escolha) {
-
-                case 1:
-
-                    vdjogador = 25;
-                    dmjogador = 10;
-                    dmInimigo = 12;
-                    batalha(20, "Fogo");
-                    if (vitoria) {
-
-                        itens.add("Bomba ");
-                        itens.add("Poção");
-                        vdjogador = 30 + 5;
-
-                        vitoria = false;
-                    } else {
-
-                        vdjogador = 15;
-                        batalha(10, "Fogo");
-
-                    }
-                    break;
-
-                case 2:
-                    System.out.println("Você escolheu sair");
-                    break;
-            }
-
-            System.out.println("Sala Da Floresta, deseja prosseguir?" // <-- Alterar para o texto do "diálogo" --
-                    + "Sim = 1 | Não = 2");
-
-            switch (escolha) {
-                case 1:
-
-                    vdjogador = 35;
-                    dmjogador = 10;
-                    dmInimigo = 7;
-                    batalha(80, "Grama");
-                    if (vitoria) {
-
-                        itens.add("Bomba Magica");
-                        itens.add("Poção");
-                        vdjogador = vdjogador - dmInimigo + 30;
-
-                        vitoria = false;
-                    } else {
-
-                        vdjogador = 15;
-                        batalha(10, "Grama");
-
-                    }
-                    break;
-                case 2:
-                    System.out.println("Você escolheu sair");
-                    break;
-            }
-
-            System.out.println("Sala do Cavaleiro, Sala Final, deseja prosseguir?" // <-- Alterar para o texto do "diálogo" --
-                    + "Sim = 1 | Não = 2");
-            switch (escolha) {
-                case 1:
-
-                    vdjogador = 35;
-                    dmjogador = 10;
-                    dmInimigo = 12;
-                    batalha(35, "Grama");
-                    if (vitoria) {
-
-                        vdjogador = 35;
-
-                        vitoria = false;
-                    } else {
-
-                        vdjogador = 25;
-                        batalha(10, "Grama");
-
-                    }
-                    break;
-                case 2:
-                    System.out.println("Você escolheu sair");
-                    break;
-            }
-        } while (!salas);
+            System.out.println("Você ganhou a batalha e recolheu os itens"
+                    +" ecebe a recompensa que você desejava\n" +
+"dinheiro suficiente para viver uma vida tranquila"
+                    + "Uma poção de cura"
+                    + "Sua vida total agora é de 45"
+            +"você sai da caverna e enquanto você observava a vista em um flash de alguns segundos você não enxerga mais aquela vista mas sim as paredes daquela caverna,\n e rapidamente volta a enxerga aquela vista");
+        }
 
     }
-     */
-    //*****************************************************************************************************************************************
-    //*****************************************************************************************************************************************
-    //Metodos do combate
+     
     static ArrayList<String> itens = new ArrayList<String>();//Aqui é onde vão ser armazenado todos os itens
     static int dmInimigo;//o dano do inimigo deve ser global por conta dos itens de efeito
 
@@ -435,20 +325,26 @@ public class Jogo {
         System.out.println("Ao se levantar e recolher os poucos itens que encontrou,\nOlhando entre a brecha da porta você sente uma forte brisa. "
                 + "Abrindo a porta e passando por ela, Você entra em uma praia.");
         // Sala agua  salas() -> Fogo -> Grama -> Terra -> Ar;
+        salaAgua();
         System.out.println("Ao finalizar o combate, o céu começa a escurecer formando um redemoinho de nuvens, a mar começa a ficar vermelho e a ilha começa a expulgar lava."
                 + "\n Você vira ao redor e encontra um portal, ao passar por ele você se encontra em um lugar totalmente distorcido, Seria esse o inferno? ");
         System.out.println("Bem vindo a Sala de Fogo: ");
         //sala fogo()
+        salaFogo();
         System.out.println("Finalizandoa  batalha, saindo virotioso é possivel ver a abertura de um novo portal em sua frente, passando por ele voce fica dormente..."
                 + "\n É possivel ouvir o barulho de passaros e e folhas, apos levantar você percebe que esta em uma floresta");
         //>Grama
+        salaGrama();
         System.out.println("Apos derrotar os inimigos, olhando ao seus arredores é possivel perceber que o terreno começou a mudar as arvores começaram a virar pedra "
                 + "\n e a vegetação começa a secar, todo o cénario muda em um piscar de olhos ");
         // sala Terra
+        salaTerra();
 
         System.out.println("Derrotando todos os inimigos você é sugado por um tornado, Acordando em cima das nuvens.");
         //Sala Ar
-
+        salaAr();
+        System.out.println("Você pisca os olhos, como da ultima vez você entra em uma nova sala mas dessa vez é diferente você está em uma sala como a primeira que você surgiu,\n e se depara com um cavaleiro maior que você e muito intimidado");
         //sala 
+        salaFinal();
     }
 }
