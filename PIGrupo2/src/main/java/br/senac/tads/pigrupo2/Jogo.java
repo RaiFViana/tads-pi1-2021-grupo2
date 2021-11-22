@@ -31,8 +31,13 @@ public class Jogo {
                     System.out.println("A opção escolhida foi Instruções.");
                     System.out.println("A opção (2)Jogar iniciara o jogo, todos os comandos deverão ser introduzidos por texto quando solicitados.\n"
                             + "A escolha (3)Creditos ira mostrar o nome dos criadores do projeto. \n"
-                            + "E a escolha (4)Sair for selecionada o programa vai se encerrar.\n"
-                            + " A escolha (5)Enredo é uma introdução sobre o enredo do jogo.\n");
+                            + "A escolha (4)Enredo é uma introdução sobre o enredo do jogo.\n"
+                            + "E a escolha (5)Sair for selecionada o programa vai se encerrar.\n"
+                            + "Itens: \n"
+                            + "Tocha: Só é eficaz com seres de grama \n"
+                            + "Bomba d'gua: Eficaz com todos os inimigos menos com os seres de grama \n"
+                            + "Bomba: Eficaz com todos os inimigos \n"
+                            + "Bomba Magica: não causa dano porem diminui o dano dos inimigos em 5 pontos \n");
                     break;
                 case 2:
                     System.out.println("A opção escolhida foi jogar");
@@ -43,10 +48,6 @@ public class Jogo {
                     System.out.println("Criado por: Raí Fernando Santos Viana; \n José Natan Claudino Dantas; \n Bruno Viana Rufino; \n Gian Felipe Pechuti; \n Gustavo Falcione Cagnato.\n Senac 2021, Projeto Integrador, Grupo 2. ");
                     break;
                 case 4:
-                    System.out.println("Saindo...");
-                    System.exit(0);
-                    break;
-                case 5:
                     System.out.println("O “herói” (jogador) é um explorador, um rapaz bem-informado, e descobre da lenda da \n"
                             + "Ehrgeiz Dungeon, um lugar onde qualquer ambição daquele que entrar na dungeon e sair vivo \n"
                             + "será realizada, nosso “herói” ao encontrar esse lugar não perde a oportunidade e adentra a \n"
@@ -60,6 +61,10 @@ public class Jogo {
                             + "você é o desafio para eles da mesma maneira que eles para você, é a forma como a dungeon \n"
                             + "funciona, colocando o jogador sempre no último destino de outros que buscam sua ambição\n");
                     break;
+                case 5:
+                    System.out.println("Saindo...");
+                    System.exit(0);
+                    break;
                 default:
                     System.out.println("Escolha invalida");
             }
@@ -67,9 +72,11 @@ public class Jogo {
     }
 
     public static void salaAgua() {
-
-        dmInimigo = 5;
-        batalha(20, "Agua");
+        System.out.println("Você entra em uma sala completamente diferente da anterior dessa vez você está em uma sala com um visual de praia"
+                + " a sala está iluminada por um sol nos ceus, você visualiza uma porta no fundo da sala e três seres homem peixes"
+                + " dois deles muito feridos, Voce sente uma aura furiosa vindo desses seres então");
+        dmInimigo = 4;
+        batalha(15, "Agua");
         if (vitoria) {
 
             itens.add("Bomba d'gua");
@@ -80,9 +87,10 @@ public class Jogo {
 
             System.out.println("Você vence a batalha e recolhe os itens dos homens peixes,"
                     +"\n Ítens Adquiridos"
-                    + "\n+1 bomba d'água"
-                    + "\n+1 poção de cura de 10 pontos"
-                    + "\nSua vida total agora é de 25 pontos!");
+                    + "\n +1 bomba d'água"
+                    + "\n +1 poção de cura de 10 pontos"
+                    + "\n Sua vida total agora é de 25 pontos! "
+                    + "\n");
         }
 
     }
@@ -92,17 +100,16 @@ public class Jogo {
         System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente \n"
                 + "desta vez você parece estar em um vulkão a lava nas paredes e a temperatura está nas alturas \n"
                 + "você se depara com quatro inimigos que parecem ser demonios");
-        dmInimigo = 7;
+        dmInimigo = 8;
         batalha(20, "Fogo");
         if (vitoria) {
-            System.out.println("Recolhe os itens das criaturas\n" +
-                                "\n+1 bomba de fogo \n +1 poção de cura de 10 pontos\n" +
-                                "Vida total agora é 25, você também encontra uma espada um pouco melhor que a sua atual");
             itens.add("Bomba");
             itens.add("Poção");
             vdjogador = 25;
-            dmjogador += 3;
-          
+            dmjogador += 4;
+            System.out.println("Recolhe os itens das criaturas\n" +
+                                "\n+1 bomba de fogo \n +1 poção de cura de 10 pontos\n" +
+                                "você também encontra uma espada um pouco melhor que a sua atual, Dano atual = "+ dmjogador + "\n");
             vitoria = false;
         }     
     }
@@ -111,13 +118,13 @@ public class Jogo {
         System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente, "
                 + "desta vez você parece estar em uma floresta as paredes são envoltas de arvores, "
                 + "e ao longe você ve o sol iluminando o local, você se depara com três inimigos com forma humanoide totalmente feitos de grama ");
-        dmInimigo = 9;
+        dmInimigo = 12;
         batalha(25, "Grama");
         if (vitoria) {
             System.out.println("Recolhe os itens das criaturas\n" +
                                 "uma Bomba Magica e uma poção de cura de 10 pontos\n" +
-                                "você também encontra uma bota de aventureiro, vida total agora é 30");
-            itens.add("Bomba");
+                                "você também encontra uma bota de aventureiro, vida total agora é 30 \n");
+            itens.add("Bomba Magica");
             itens.add("Poção");
             vdjogador = 30;
           
@@ -127,10 +134,10 @@ public class Jogo {
     
     public static void salaTerra() {
     
-        System.out.println("Você entrou na Sala da Terra, nela você enfrentará um "
+        System.out.println("Ao entrar na sala você sente o ar rarefeito, é como se estivesse no topo de uma montanha, na sua frente a um"
             + "Golém de Pedra"); 
-                    dmInimigo = 12;
-                    batalha(20, "Terra"); 
+                    dmInimigo = 15;
+                    batalha(25, "Terra"); 
                     
                     if (vitoria) {
 
@@ -140,55 +147,59 @@ public class Jogo {
                         vitoria = false; 
                         
                         System.out.println("Você vence a batalha do Golem "
-                        + "e recolhe os itens:");
+                        + "e recolhe os itens: ");
                         System.out.println(" → Uma bomba");
                         System.out.println(" → Uma poção de cura");
-                        System.out.println(" → Sua vida agora é 25");
+                        System.out.println(" → Sua vida agora é 35");
                         
                     } 
     }
     
     public static void salaAr() {
 
-
+        System.out.println("Agora você esta acima das nuvens o vento forte bate no seu rosto, a sua frente um criatura que se parece com um passaro,"
+                 + "Muito grande e com um corpo que parece ser feito por tornados \n");
         dmInimigo = 16;
-        batalha(20, "Ar");
+        batalha(30, "Ar");
 
         if (vitoria) {
 
             itens.add("Bomba");
-            itens.add("Poção");
-
-            vdjogador = 35;
-
-            vitoria = false;
-
-            System.out.println("Você ganhou a batalha e recolheu os itens"
-                    + "Uma Bomba"
-                    + "Uma poção de cura"
-                    + "Sua vida total agora é de 35");
-        }
-
-    }
-    
-     public static void salaFinal() {
-
-
-        dmInimigo = 18;
-        batalha(20, "Ar");
-
-        if (vitoria) {
-
-            itens.add("Bomba");
+            itens.add("Bomba Magica");
             itens.add("Poção");
 
             vdjogador = 40;
 
             vitoria = false;
 
+            System.out.println("Você ganhou a batalha e recolheu os itens \n"
+                    + "Uma Bomba \n"
+                    + "Uma poção de cura \n"
+                    + "Sua vida total agora é de 40 \n");
+        }
+
+    }
+    
+     public static void salaFinal() {
+
+         System.out.println("você sente que essa é a sua ultima batalha\n" +
+                            "e que para alcançar seu objetivo \n" +
+                            "tem que derotar esse inimigo");
+        dmInimigo = 18;
+        batalha(40, "Humano");
+
+        if (vitoria) {
+
+            itens.add("Bomba");
+            itens.add("Poção");
+
+            vdjogador = 45;
+
+            vitoria = false;
+
             System.out.println("Você ganhou a batalha e recolheu os itens"
                     +" ecebe a recompensa que você desejava\n" +
-"dinheiro suficiente para viver uma vida tranquila"
+                    "dinheiro suficiente para viver uma vida tranquila"
                     + "Uma poção de cura"
                     + "Sua vida total agora é de 45"
             +"você sai da caverna e enquanto você observava a vista em um flash de alguns segundos você não enxerga mais aquela vista mas sim as paredes daquela caverna,\n e rapidamente volta a enxerga aquela vista");
@@ -219,13 +230,20 @@ public class Jogo {
                 lutafim = true;
                 vitoria = false;
             } else {
-                System.out.println("O que deseja fazer? \n"
+                System.out.println("\nO que deseja fazer? \n"
                         + "1.Atacar 2.Tentar Fugir 3.Usar Itens \n"); //seleciona uma ação atraves dos numeros
                 escolha = input.nextInt();
                 switch (escolha) {
                     case 1:                     // caso atacar
                         vdinimigo -= dmjogador; //causa dano ao inimigo
                         danoroundjg = dmjogador;//guarda dano causado para informar jogador
+                        
+                        if(vdinimigo <= 0){
+                            danoroundim = 0;
+                        }else{
+                            danoroundim = dmInimigo;
+                            vdjogador -= dmInimigo;                             //causa dano do inimigo para o jogador
+                        }
                         break;
                     case 2:                     //caso tentar fugir
                         int sorte = rand.nextInt(10);   //gera o numero da sorte do jogador até 10
@@ -238,19 +256,31 @@ public class Jogo {
                         break;
                     case 3:                     //caso use item
                         System.out.println("Escolha seu item:");
+                        System.out.println("99. Voltar");
                         for (int i = 0; i < itens.size(); i++) {               //lista todos os itens no inventario do jogador
                             System.out.println(i + ". " + itens.get(i));
-                        }
+                        }                       
                         int resposta = input.nextInt();                 //recebe o item escolhido
-                        int dano = danoItem(itens.get(resposta), caracInimigo); //procura o item no metodo dos itens caso seja um item de efeito e retorna 0 de dano
-                        vdinimigo -= dano;
-                        danoroundjg = dano;
+                        if(resposta == 99){
+                            danoroundjg = 0;
+                            danoroundim = 0;
+                        }else{
+                            int dano = danoItem(itens.get(resposta), caracInimigo);  //procura o item no metodo dos itens caso seja um item de efeito e retorna 0 de dano
+                            vdinimigo -= dano;
+                            danoroundjg = dano;
+
+                            if(vdinimigo <= 0){
+                                danoroundim = 0;
+                            }else{
+                                danoroundim = dmInimigo;
+                                vdjogador -= dmInimigo;                             //causa dano do inimigo para o jogador
+                            }
+                        }
                     default:
                         System.out.println("Selecione uma opção valida");
                         break;
                 }
-                danoroundim = dmInimigo;
-                vdjogador -= dmInimigo;     //causa dano do inimigo para o jogador
+                
                 System.out.println("\n Seu dano: " + danoroundjg);     //informa dano
                 System.out.println("\n Dano inimigo: " + danoroundim);
 
@@ -265,35 +295,59 @@ public class Jogo {
             System.out.println("Inimigos Derrotados");
         } else {
             System.out.println("Derrota");
+            System.exit(0);
         }
     }
 
     static int danoItem(String item, String caracInimigo) { //verifica todos os itens e seus efeitos, alguns itens tem efeito diferente dependendo das caracteristicas do inimigo
-        if ("Tocha".equals(item)) {             //itens de dano
+        if ("Tocha".equals(item)) {             //itens de dano         
             if ("Grama".equals(caracInimigo)) {
                 return 10;
             } else {
                 return 0;
             }
         } else if ("Bomba d'gua".equals(item)) {
+            for(int i = 0; i < itens.size(); i++){
+                if(itens.get(i).equals("Bomba d'gua")){
+                    itens.remove(i);
+                    break;
+                }
+            }
             if ("Fogo".equals(caracInimigo)) {
-                return 10;
+                return 15;
             } else if ("Grama".equals(caracInimigo)) {
                 return 0;
             } else {
-                return 5;
-            }
-        } else if ("Bomba".equals(item)) {
-            if ("Grama".equals(caracInimigo)) {
-                return 15;
-            } else {
                 return 10;
             }
+        } else if ("Bomba".equals(item)) {
+            for(int i = 0; i < itens.size(); i++){
+                if(itens.get(i).equals("Bomba")){
+                    itens.remove(i);
+                    break;
+                }
+            }
+            if ("Grama".equals(caracInimigo)) {
+                return 17;
+            } else {
+                return 15;
+            }
         } else if ("Bomba Magica".equals(item)) {  //itens de efeito
-            System.out.println(dmInimigo);
+            for(int i = 0; i < itens.size(); i++){
+                if(itens.get(i).equals("Bomba Magica")){
+                    itens.remove(i);
+                    break;
+                }
+            }
             dmInimigo = dmInimigo - 5;
             return 0;
         } else if ("Poção".equals(item)) {
+            for(int i = 0; i < itens.size(); i++){
+                if(itens.get(i).equals("Poção")){
+                    itens.remove(i);
+                    break;
+                }
+            }
             vdjogador += 10;
             return 0;
         } else {
@@ -303,32 +357,40 @@ public class Jogo {
     }
 
     public static void main(String[] args) {
+        boolean escolhaValida = true;
         menu();
         Scanner input = new Scanner(System.in);
-        System.out.println("Você acorda em frente a duas portas, com uma tocha apagada em sua mão esquerda e uma mochila vazia nos pés."
-                + "Qual porta você deseja entrar?"
-                + "\n Porta da esquerda = 1 | Porta da direita = 2");
+        while(escolhaValida == true){
+            System.out.println("Você acorda em frente a duas portas, com uma tocha apagada em sua mão esquerda e uma mochila vazia nos pés."
+                    + "Qual porta você deseja entrar?"
+                    + "\n Porta da esquerda = 1 | Porta da direita = 2");
 
-        int escolhaEspada = input.nextInt();
-        switch (escolhaEspada) {
-            case 1:
-                System.out.println("Você entrou na porta da esquerda e encontrou uma espada de aço, afiada e com a empunhadura em couro perfeita para combate. \n+10 Dano de Ataque");
-                dmjogador = 10;
-                break;
-            case 2:
-                System.out.println("Você entrou na porta da direita e encontrou uma espada de madeira \n +5 Dano de Ataque");
-                dmjogador = 5;
-                break;
-            default:
-                System.out.println("Escolha Invalida");
+            int escolhaEspada = input.nextInt();
+        
+            switch (escolhaEspada) {
+                case 1:
+                    System.out.println("Você entrou na porta da esquerda e encontrou uma espada de aço, afiada e com a empunhadura em couro perfeita para combate. \n+8 Dano de Ataque \n");
+                    dmjogador = 8;
+                    itens.add("Tocha");
+                    escolhaValida = false;
+                    break;
+                case 2:
+                    System.out.println("Você entrou na porta da direita e encontrou uma espada de madeira \n +5 Dano de Ataque \n");
+                    dmjogador = 5;
+                    itens.add("Tocha");
+                    escolhaValida = false;
+                    break;
+                default:
+                    System.out.println("Escolha Invalida");
+            }
         }
         System.out.println("Recolhedo a espada que encontrou, em sua frente é possivel ver uma porta entreaberta...\nAproximando-se da porta você sente uma forte brisa. "
                 + "Abrindo a porta e passando por ela, Você entra em uma praia. \n");
         // Sala agua  salas() -> Fogo -> Grama -> Terra -> Ar;
         salaAgua();
         System.out.println("Finalizando o combate, O céu começa a escurecer formando um redemoinho de nuvens, O mar começa a ficar vermelho e a ilha começa a expelir lava."
-                + "\nVocê procura uma saida ao redor e encontra um portal, Passando por ele você se encontra em um lugar totalmente distorcido, Seria esse o inferno? ");
-        System.out.println("Bem vindo a Sala de Fogo: ");
+                + "\nVocê procura uma saida ao redor e encontra um portal, Passando por ele você se encontra em um lugar totalmente distorcido, Seria esse o inferno? \n");
+        System.out.println("Bem vindo a Sala de Fogo: \n");
         //sala fogo()
         salaFogo();
         System.out.println("Finalizando a batalha, saindo virotioso, É possivel ver a abertura de um novo portal em sua frente, Passando por ele voce fica dormente..."
@@ -346,5 +408,7 @@ public class Jogo {
         System.out.println("Você pisca os olhos, Como da última vez, Você entra em uma nova sala mas dessa vez é diferente, Está sala é idêntica a primeira que você surgiu,\nCom um cavaleiro maior que você e muito intimidador.\n");
         //sala 
         salaFinal();
+        
+        System.out.println("Obrigado por jogar nosso Jogo");
     }
 }
