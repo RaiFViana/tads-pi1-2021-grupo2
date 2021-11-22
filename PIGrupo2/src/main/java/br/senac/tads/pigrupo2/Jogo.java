@@ -23,7 +23,7 @@ public class Jogo {
         int menu = 0;
         Scanner input = new Scanner(System.in);
         while (menu <= 1) {
-            System.out.println("1.Instruções\n2.Jogar\n3.Créditos\n4.Sair\n5.Enredo");
+            System.out.println("1.Instruções\n2.Jogar\n3.Créditos\n4.Enredo\n5.Sair");
 
             escolha = input.nextInt();
             switch (escolha) {
@@ -72,9 +72,9 @@ public class Jogo {
     }
 
     public static void salaAgua() {
-        System.out.println("Você entra em uma sala completamente diferente da anterior dessa vez você está em uma sala com um visual de praia"
-                + " a sala está iluminada por um sol nos ceus, você visualiza uma porta no fundo da sala e três seres homem peixes"
-                + " dois deles muito feridos, Voce sente uma aura furiosa vindo desses seres então");
+        System.out.println("Você entra em uma sala completamente diferente da anterior dessa vez você está em uma sala com um visual de praia\n"
+                + " a sala está iluminada por um sol nos ceus, você visualiza uma porta no fundo da sala e três seres homem peixes\n"
+                + " dois estão mito feridos, Você sente uma aura furiosa vindo desses seres então...\n");
         dmInimigo = 4;
         batalha(15, "Agua");
         if (vitoria) {
@@ -97,8 +97,8 @@ public class Jogo {
     
 
     public static void salaFogo(){
-        System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente \n"
-                + "desta vez você parece estar em um vulkão a lava nas paredes e a temperatura está nas alturas \n"
+        System.out.println("Finalizando o combate, Você entra em uma nova sala totalmente diferente \n"
+                + "desta vez você parece estar em um vulcão, Com lava nas paredes e a temperatura está nas alturas \n"
                 + "você se depara com quatro inimigos que parecem ser demonios");
         dmInimigo = 8;
         batalha(20, "Fogo");
@@ -115,9 +115,9 @@ public class Jogo {
     }
     
     public static void salaGrama(){
-        System.out.println("Como da ultima vez você entra em uma nova sala totalmente diferente, "
-                + "desta vez você parece estar em uma floresta as paredes são envoltas de arvores, "
-                + "e ao longe você ve o sol iluminando o local, você se depara com três inimigos com forma humanoide totalmente feitos de grama ");
+        System.out.println("Finalizando a batalha, saindo virotioso, É possivel ver a abertura de um novo portal em sua frente, Passando por ele voce fica dormente..."
+                + "\n É possivel ouvir o barulho de passaros e folhas, Após levantar você percebe que esta em uma floresta, As paredes são arvores\n"
+                + "e ao longe ]e possivel ver o sol iluminando o local, você se depara com três inimigos com forma humanoide totalmente feitos de grama ");
         dmInimigo = 12;
         batalha(25, "Grama");
         if (vitoria) {
@@ -135,7 +135,7 @@ public class Jogo {
     public static void salaTerra() {
     
         System.out.println("Ao entrar na sala você sente o ar rarefeito, é como se estivesse no topo de uma montanha, na sua frente a um"
-            + "Golém de Pedra"); 
+            + " Golém de Pedra"); 
                     dmInimigo = 15;
                     batalha(25, "Terra"); 
                     
@@ -157,8 +157,8 @@ public class Jogo {
     
     public static void salaAr() {
 
-        System.out.println("Agora você esta acima das nuvens o vento forte bate no seu rosto, a sua frente um criatura que se parece com um passaro,"
-                 + "Muito grande e com um corpo que parece ser feito por tornados \n");
+        System.out.println("O vento forte bate no seu rosto, A sua frente um criatura que se parece com um pássaro,"
+                 + " Muito grande e com um corpo que parece ser feito por tornados \n");
         dmInimigo = 16;
         batalha(30, "Ar");
 
@@ -198,11 +198,11 @@ public class Jogo {
             vitoria = false;
 
             System.out.println("Você ganhou a batalha e recolheu os itens"
-                    +" ecebe a recompensa que você desejava\n" +
-                    "dinheiro suficiente para viver uma vida tranquila"
-                    + "Uma poção de cura"
-                    + "Sua vida total agora é de 45"
-            +"você sai da caverna e enquanto você observava a vista em um flash de alguns segundos você não enxerga mais aquela vista mas sim as paredes daquela caverna,\n e rapidamente volta a enxerga aquela vista");
+                    +" Recebe a recompensa que você desejava\n" +
+                    " Dinheiro suficiente para viver uma vida tranquila\n"
+                    + "Uma poção de cura\n"
+                    + "Sua vida total agora é de 45\n"
+            +"Saindo da caverna e enquanto você observa a vista, Em um flash de alguns segundos você não enxerga os inimigos que derrotou na caverna,\n E rapidamente volta a enxerga a vista normalmente.");
         }
 
     }
@@ -385,20 +385,15 @@ public class Jogo {
             }
         }
         System.out.println("Recolhedo a espada que encontrou, em sua frente é possivel ver uma porta entreaberta...\nAproximando-se da porta você sente uma forte brisa. "
-                + "Abrindo a porta e passando por ela, Você entra em uma praia. \n");
+                + "Abrindo a porta e passando por ela... \n");
         // Sala agua  salas() -> Fogo -> Grama -> Terra -> Ar;
         salaAgua();
-        System.out.println("Finalizando o combate, O céu começa a escurecer formando um redemoinho de nuvens, O mar começa a ficar vermelho e a ilha começa a expelir lava."
-                + "\nVocê procura uma saida ao redor e encontra um portal, Passando por ele você se encontra em um lugar totalmente distorcido, Seria esse o inferno? \n");
-        System.out.println("Bem vindo a Sala de Fogo: \n");
         //sala fogo()
         salaFogo();
-        System.out.println("Finalizando a batalha, saindo virotioso, É possivel ver a abertura de um novo portal em sua frente, Passando por ele voce fica dormente..."
-                + "\nÉ possivel ouvir o barulho de passaros e folhas, Após levantar você percebe que esta em uma floresta\n");
         //>Grama
         salaGrama();
         System.out.println("Apos derrotar os inimigos, Olhando ao seus arredores é possivel perceber que o terreno começou a mudar, As arvores começaram a virar pedra, "
-                + "\nA vegetação começa a secar e todo o cénario muda em um piscar de olhos.\n");
+                + "\nA vegetação começa a secar e todo o cénario muda em um piscar de olhos.");
         // sala Terra
         salaTerra();
 
